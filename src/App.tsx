@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { AlertTriangle, Ban, BellRing, CheckCheck, Info } from "lucide-react";
+import Alert from "./components/Alert/Alert.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Alert
+          type={"alert-default"}
+          icon={<BellRing size={20} />}
+          title={"Upgrade your plan"}
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, eum
+          nostrum corporis dignissimos voluptate optio explicabo non laboriosam
+          recusandae! Magnam?"
+        />
+        <Alert type={"alert-info"} icon={<Info size={20} />} title={"Note"}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, eum
+          nostrum corporis <a href="/">laboriosam</a> dignissimos voluptate
+          optio explicabo non laboriosam recusandae! Magnam?
+        </Alert>
+        <Alert
+          type={"alert-danger"}
+          icon={<Ban size={20} />}
+          title={"something went wrong"}
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, eum
+          nostrum corporis dignissimos voluptate optio explicabo non laboriosam
+          recusandae! Magnam?"
+        />
+        <Alert
+          type={"alert-success"}
+          icon={<CheckCheck size={20} />}
+          title={"Your order has been processed"}
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, eum
+          nostrum corporis dignissimos voluptate optio explicabo non laboriosam
+          recusandae! Magnam?"
+        />
+        <Alert
+          type={"alert-warning"}
+          icon={<AlertTriangle size={20} />}
+          title={"Tips & Tricks"}
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, eum
+          nostrum corporis dignissimos voluptate optio explicabo non laboriosam
+          recusandae! Magnam?"
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
